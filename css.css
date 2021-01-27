@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&display=swap');
+
+:root{
+    --font: 'Chakra Petch', sans-serif;
+    --mainColor: rgba(255,255,255,1);
+    --colorOfKey: rgba(0,0,0,1)
+}
+
+
+body{
+    margin: 0; padding: 0;
+    background-color: #292929;
+    font-family: var(--font);
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+/* Component */
+
+.component{
+    background-color: var(--mainColor);
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    width: auto;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(5, 60px);
+    grid-template-rows: repeat(5, 100px);
+    grid-template-areas:
+    "output output output output output"
+    "seven eight nine div C"
+    "four five six mult C"
+    "one two three sub C"
+    "zero comma equal add C";
+    -webkit-box-shadow: 1px 1px 10px 0px var(--mainColor);
+    -moz-box-shadow: 1px 1px 10px 0px var(--mainColor);
+    box-shadow: 1px 1px 10px 0px var(--mainColor);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* touch style */
+
+.block{
+    color: var(--colorOfKey);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+    -webkit-transition: 0.1s ease-in-out;
+    -moz-transition: 0.1s ease-in-out;
+    -o-transition: 0.1s ease-in-out;
+    font-size: 25px
+}
+.block:hover{
+    -webkit-box-shadow: 1px 1px 5px 0px rgba(41,41,41,1);
+    -moz-box-shadow: 1px 1px 5px 0px rgba(41,41,41,1);
+    -o-box-shadow: 1px 1px 5px 0px rgba(41,41,41,1);
+    box-shadow: 1px 1px 5px 0px rgba(41,41,41,1);
+
+}
+
+/* Display style */
+
+.output{
+    padding-right: 1em;
+    letter-spacing: 0.1em;
+    background-color: #e6e6e6;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 30px;
+    border: 2px solid var(--mainColor);
+    position: relative;
+}
+
+/* Animation 'on click' on touch */
+.blockAnimation::before{
+    z-index: -1;
+    content: "";
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    width: 0;
+    height: 0;
+    border-radius: 100%;
+    background-color: #292929;
+    transition: 0.3s ease-in-out;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+}
+.blockAnimation:hover::before{
+    width: 50px;
+    height: 50px;
+}
+.blockAnimation:hover{
+    color: var(--mainColor);
+}
+
+/* Animation of wait bar */
+
+.animationBar{
+    position: absolute;
+    top: 80%;
+    width: 30px;
+    height: 3px;
+    background-color: var(--colorOfKey);
+    animation: animationBar 0.6s ease-in-out infinite ;
+    -moz-animation: animationBar 0.6s ease-in-out infinite ;
+    -webkit-animation: animationBar 0.6s ease-in-out infinite ;
+    -o-animation: animationBar 0.6s ease-in-out infinite ;
+}
+
+/* Keyframes for wait bar */
+
+@keyframes animationBar {
+    from{opacity: 1}
+    to {opacity: 0}
+}
+@-moz-keyframes animationBar {
+    from{opacity: 1}
+    to {opacity: 0}
+}
+@-o-keyframes animationBar {
+    from{opacity: 1}
+    to {opacity: 0}
+}
+@-webkit-keyframes animationBar {
+    from{opacity: 1}
+    to {opacity: 0}
+}
+
+
+/* Just name of grid and sometimes style of touch */
+
+.with_C{grid-area: C; color: red; font-weight: 700}
+.with_0{grid-area: zero}
+.with_1{grid-area: one}
+.with_2{grid-area: two}
+.with_3{grid-area: three}
+.with_4{grid-area: four}
+.with_5{grid-area: five}
+.with_6{grid-area: six}
+.with_7{grid-area: seven}
+.with_8{grid-area: eight}
+.with_9{grid-area: nine}
+.with_add{grid-area: add; color: green}
+.with_sub{grid-area: sub; color: green}
+.with_mult{grid-area: mult; color: green}
+.with_div{grid-area: div; color: green}
+.with_equal{grid-area: equal; color: var(--mainColor); background-color: green}
+.with_comma{grid-area: comma}
+.output{grid-area: output}
+
+

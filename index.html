@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator HTML/CSS/JS</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+
+<!-- component -->
+
+    <div class="component">
+
+        <!-- display -->
+
+        <div class="output">
+            <!-- display for values -->
+            <div class="display"></div>
+            <!-- display for animation of bar -->
+            <div class="animationBar"></div>
+
+        </div>
+
+        <!-- all buttons of calculator -->
+        <div onclick="getTouch(this)" value="0" class="block with_0">0</div>
+        <div onclick="getTouch(this)" value="." class="block with_comma">.</div>
+        <div onclick="getTouch(this)" value="=" class="block with_equal">=</div>
+        <div onclick="getTouch(this)" value="+" class="block with_add">+</div>
+        <div onclick="getTouch(this)" value="1" class="block with_1">1</div>
+        <div onclick="getTouch(this)" value="2" class="block with_2">2</div>
+        <div onclick="getTouch(this)" value="3" class="block with_3">3</div>
+        <div onclick="getTouch(this)" value="-" class="block with_sub">-</div>
+        <div onclick="getTouch(this)" value="4" class="block with_4">4</div>
+        <div onclick="getTouch(this)" value="5" class="block with_5">5</div>
+        <div onclick="getTouch(this)" value="6" class="block with_6">6</div>
+        <div onclick="getTouch(this)" value="*" class="block with_mult">*</div>
+        <div onclick="getTouch(this)" value="7" class="block with_7">7</div>
+        <div onclick="getTouch(this)" value="8" class="block with_8">8</div>
+        <div onclick="getTouch(this)" value="9" class="block with_9">9</div>
+        <div onclick="getTouch(this)" value="/" class="block with_div">/</div>
+        <div onclick="getTouch(this)" value="C" class="block with_C">C</div>
+
+    </div>
+
+</body>
+
+<script rel="script" src="javascript.js"></script>
+
+</html>
